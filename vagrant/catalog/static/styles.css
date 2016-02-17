@@ -1,0 +1,124 @@
+body {
+	background-image: url("/static/background.jpg");
+	background-size: cover;
+	height: 100%;
+	font-family: 'Inconsolata';
+}
+
+/* css for header */
+.top-menu {
+	margin-bottom: 0;
+	font-size: 18px;
+	height: 25%;
+	background-color: #009899;
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+}
+
+.top-menu a{
+	color: #f9f2ec
+}
+
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#category-name {
+	font-size: 36px;
+}
+
+#user-name {
+	font-size: 22px;
+}
+
+.edit-delete-category {
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#float-right {
+	float: right;
+	margin-right: 0px;
+}
+
+.container{
+	padding-right: 0px;
+	padding-left: 0px;
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.category-operations {
+	width: 100%;
+}
+
+.item {
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: left;
+}
+
+.item-description {
+	font-size: 18px;
+}
+
+.indent {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+.category-operations form {
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#button{
+	color: #009899;
+}
+
+
+#content-section{
+	background-color: #f9f2ec;
+	margin-top: -20px;
+	width: 100%;
+	text-align: center;
+	overflow: auto;
+	box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.75);
+	border-bottom-left-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+
+#content-section a{
+	color: #009899;
+
+}
+
+#menu-text{
+	text-align: right;
+
+}
+
+.google-signin{
+	margin-top: 20px;
+}
+
+#signInButton{
+	margin-left: 0;
+}
+
+.flash{
+	margin-top: 20px;
+}
+.flash ul li{
+	float: left;
+	list-style-type: none;
+	margin-left: -25px;
+}
+

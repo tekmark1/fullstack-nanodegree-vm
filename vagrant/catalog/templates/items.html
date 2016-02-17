@@ -1,0 +1,71 @@
+<!--this page displays the items for a given category, but is only viewable by the user who created the category-->
+{% extends "main.html" %}
+{% block content %}
+
+<!--display flash content, if any-->
+<div class='flash'>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<ul>
+				{% for message in messages %}
+					<li><strong> {{ message }} </strong></li>
+				{% endfor %}
+			</ul>
+			<br>
+		{% endif %}
+	{% endwith %}
+</div>
+
+<div id="category-name">
+	{{ category.name }} Items
+</div>
+<div id="user-name">
+	Created by: {{ user.name }}
+</div>
+
+<!--a button group which contains buttons for links to edit or delete a category, or 
+	create a new item. These options are available to the user who created this category-->
+<div class="button-group">
+	<a href="{{ url_for('editCategory', category_id=category.id) }}">
+		<button type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Edit Category
+		</button>
+	</a>
+	<a href="{{ url_for('deleteCategory', category_id=category.id) }}">
+		<button type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Delete Category
+		</button>
+	</a>
+	<a href="{{ url_for('newItem', category_id=category.id) }}">
+		<button class="btn btn-default">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>New Item
+		</button>
+	</a>
+</div>		
+
+<!--if there are items for this category, display items.
+	items are clickable, which will take user to that item's description.
+	links are also available to the logged-in user which will allow the user to edit and delete an item-->
+{% if showItems != [] %}
+	<div class="show-items">
+		{% for item in showItems %}
+			<a href="{{ url_for('showItemDescription', category_id = category.id, item_id=item.id) }}">
+				<h2>{{item.name}}</h2>
+			</a>
+			<a href="{{ url_for('editItem', category_id=category.id, item_id=item.id) }}">
+				<button class="btn btn-default" id="new-menu-item">
+					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>Edit Item
+				</button>
+			</a>
+			<a href="{{ url_for('deleteItem', category_id=category.id, item_id=item.id) }}">
+				<button class="btn btn-default" id="new-menu-item">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Delete Item
+				</button>
+			</a>
+		{% endfor %}
+	</div>
+{% endif %}
+<br>
+
+
+{% endblock %}

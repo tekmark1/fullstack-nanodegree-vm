@@ -1,0 +1,36 @@
+<!--html in which all other templates containing block content will inputted.
+	this file contains the header content with a home screen link as well
+	as a login/logout link-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="row top-menu">
+					<div class="col-md-6" id="home">
+						<a href="{{url_for('showCatalog')}}">Show All Categories</a>
+					</div>
+					<div class="col-md-6" id="menu-text">
+							{% if 'username' not in session %}
+							<a href="{{url_for('showLogin')}}">Click Here to Login </a>
+							{% else %}
+							<a href="{{url_for('disconnect')}}">Logout </a>
+							{% endif %}
+						
+					</div>
+				</div>
+			</header>
+			<section id="content-section">
+				{% block content %}
+				{% endblock %}
+			</section>
+			<br>
+		</div>
+	</body>
+</html>

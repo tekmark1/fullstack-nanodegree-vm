@@ -1,0 +1,23 @@
+<!--allow user to edit an item he/she created-->
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Edit {{ item.name }}</h1>
+
+<!--form which allows user to input edit item name, item description, as well as submit this edit-->
+<div class="item">
+	<form class="add-item" action="#" method="post">
+		<div class="form-group">
+			<label for="inputItemName">Item name</label>
+			<input type="text" class="form-control" id="inputItemName" value="{{ item.name }}" name="name">
+		</div>
+		<div class="form-group">
+			<label for="inputItemDescription">Item description</label>
+			<input type="text" class="form-control" id="inputItemDescription" value="{{ item.description }}" name="description">
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+<br>
+
+{% endblock %}

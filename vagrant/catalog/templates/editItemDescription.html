@@ -1,0 +1,16 @@
+<!--user can edit an item's description, if they created that item-->
+{% extends 'main.html' %}
+{% block content %}
+
+<!--form containing the item description to be edited as well as a submit button-->
+<div class="item-operations">
+	<h1>Edit description for {{ item.name }}</h1>
+	<form class="input-group indent" action="#" method="post">
+		<input type="text" class="form-control" name="description" value="{{ item.description }}">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit">Submit</button>
+		</span>
+	</form>
+</div>
+<br>
+{% endblock %}

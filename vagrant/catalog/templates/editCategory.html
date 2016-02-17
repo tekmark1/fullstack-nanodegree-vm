@@ -1,0 +1,24 @@
+<!--page to edit a category, if a user created that category-->
+{% extends "main.html" %}
+{% block content %}
+
+<!--a group containing an input form to edit category name
+	as well as a button to submit this edit or to cancel and 
+	be directed back to the home page-->
+<div class="category-operations">
+	<h1> Edit {{ category.name }} </h1>
+	<form class="input-group" action="{{ url_for('editCategory', category_id=category.id) }}" method="post">
+		<input class="form-control" type="text" name="name" value="{{ category.name }}">
+		<span class="input-group-btn">
+			<button type="submit" class="btn btn-default">Save</button>
+		</span>
+	</form>
+	<a href = "{{ url_for('showCatalog') }}">
+		<button class="btn btn-default">
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+		</span>
+	</a>
+</div>
+<br>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<!--home page viewable by users that are not logged in-->
+{% extends "main.html" %}
+{% block content %}
+
+<h1>Categories</h1>
+<!--display categories which can be clicked to view items for that category-->
+{% for category in categories %}
+	<div class="categories">
+			<a href="{{url_for('showItems', category_id = category.id)}}">
+				<h3>{{category.name}}</h3>
+			</a>
+	</div>
+{% endfor %}
+{% endblock %}

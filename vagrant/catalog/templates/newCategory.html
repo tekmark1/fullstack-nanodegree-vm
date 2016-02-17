@@ -1,0 +1,17 @@
+<!--page to create a new category, if user is logged in-->
+{% extends "main.html" %}
+{% block content %}
+
+<!--form to input and submit category name-->
+<div class="category-operations">
+	<h1>Create a New Category</h1>
+	<form class="input-group" action="#" method="post">
+		<input type="text" class="form-control" name="name" placeholder="Category name">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit">Create</button>
+		</span>
+	</form>
+	<br>
+</div>
+
+{% endblock %}

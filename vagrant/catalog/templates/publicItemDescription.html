@@ -1,0 +1,23 @@
+<!--if the user is not logged in, he/she will be directed
+	to this page when he/she wants to view items for a category -->
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="title">
+	<h1>Category: {{ category.name }}</h1>
+	<h2>Item: {{ item.name }}</h2>
+</div>
+
+
+<div class="description">
+	{% if item.description == "" %}
+		<h3>There is no description for this item</h3>
+	{% else %}
+		<div class="item-description">
+			{{ item.description }}
+		<div>
+	{% endif %}	
+</div>
+<br>
+
+{% endblock %}

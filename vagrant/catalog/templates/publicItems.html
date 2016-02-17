@@ -1,0 +1,25 @@
+<!--items page, viewable by users not logged in-->
+{% extends "main.html" %}
+{% block content %}
+
+<div id="category-name">
+	{{ category.name }}
+</div>
+<div id="user-name">
+	Created by: {{ user.name }}
+</div>
+
+<!--if items exist, display them while allowing a user
+	to click on an item and be taken to the description for that item-->
+{% if showItems != [] %}
+	<div class="show-items">
+		{% for item in showItems %}
+			<a href="{{ url_for('showItemDescription', category_id = category.id, item_id=item.id) }}">
+				<h2>{{item.name}}</h2>
+			</a>
+		{% endfor %}
+	</div>
+{% endif %}
+<br>
+
+{% endblock %}

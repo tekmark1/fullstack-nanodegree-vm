@@ -1,0 +1,23 @@
+<!--user can create a new item for a category that he/she created-->
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Create an item</h1>
+
+<!--form with two inputs: item name and item description-->
+<div class="item">
+	<form class="add-item" action="#" method="post">
+		<div class="form-group">
+			<label for="inputItemName">Item name</label>
+			<input type="text" class="form-control" id="inputItemName" placeholder="Item name" name="name">
+		</div>
+		<div class="form-group">
+			<label for="inputItemDescription">Item description</label>
+			<input type="text" class="form-control" id="inputItemDescription" placeholder="Item description" name="description">
+		</div>
+		<button type="submit" class="btn btn-default">Create</button>
+	</form>
+</div>
+<br>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+<!--allow user to create a new description for an item he/she created-->
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Create new description for {{ item.name }}</h1>
+<!--form allowing users to input a description and submit this description--> 
+<form class="input-group indent" action="#" method="post">
+	<input type="text" name="description" class="form-control" placeholder="write item description here">
+	<span class="input-group-btn">
+		<button type="submit" class="btn btn-default">Create</button>
+	</span>
+</form>
+<br>
+
+
+{% endblock %}
